@@ -4,12 +4,14 @@ set -eufo pipefail
 
 brew bundle --file=/dev/stdin <<EOF
 brew "chezmoi"
+brew "eza"
 brew "gawk"
 brew "gh"
 brew "gnupg"
 brew "go"
 brew "golangci-lint"
 brew "jq"
+brew "mas"
 brew "nvm"
 brew "ripgrep"
 brew "starship"
@@ -30,6 +32,8 @@ cask "logi-options+"
 cask "logitune"
 cask "lunar"
 cask "orbstack"
+cask "postman"
+cask "quicklook-video"
 cask "spotify"
 cask "superwhisper"
 cask "todoist-app"
@@ -38,8 +42,15 @@ cask "zed"
 
 {{- if eq .profile "personal" }}
 brew "ffmpeg"
+cask "1password"
 cask "chatgpt"
 cask "codex"
+cask "cryptomator"
+cask "obsidian"
+cask "syncthing-app"
+cask "telegram"
+cask "whatsapp"
+mas "Infuse", id: 1136220934
 {{- end }}
 
 {{- if eq .profile "work" }}
@@ -54,7 +65,6 @@ cask "keeper-password-manager"
 cask "microsoft-auto-update"
 cask "microsoft-office"
 cask "microsoft-teams"
-cask "postman"
 cask "temurin@21"
 {{- end }}
 EOF

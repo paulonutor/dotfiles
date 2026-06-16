@@ -12,6 +12,12 @@ export VISUAL="zed --wait"
 alias edit='${=VISUAL:-${EDITOR:-nano}}'
 alias ed='edit'
 
+alias ls="eza -F -gh --group-directories-first --git --time-style=iso --color-scale all --hyperlink"
+alias ll='ls -l'
+alias la='ll -a'
+alias lc='ls -1'
+alias tree='ls -T'
+
 alias dotfiles='curl -sfL https://raw.githubusercontent.com/paulonutor/dotfiles/main/setup.sh | bash'
 
 export NVM_DIR="$HOME/.nvm"
