@@ -1,0 +1,28 @@
+#!/bin/bash
+set -eufo pipefail
+
+{{- if eq .chezmoi.os "darwin" }}
+echo "🍏 Setting macOS defaults"
+
+osascript -e 'tell application "System Preferences" to quit'
+
+echo "📚 Show the ~/Library folder"
+chflags nohidden ~/Library
+
+# Dock
+echo "💈 Automatically hide and show the dock"
+defaults write com.apple.dock autohide -bool true
+
+echo "💈 Disable magnification of Dock items"
+defaults write com.apple.dock magnification -bool false
+
+echo "💈 Set the icon size of Dock items to 44 pixels"
+defaults write com.apple.dock tilesize -int 44
+
+killall Dock
+
+# iTerm2
+echo "🖥️ Setting iTerm2 preferences"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm2"
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+{{ end -}}

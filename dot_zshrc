@@ -1,0 +1,29 @@
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE=~/.zsh_history
+
+export EDITOR="zed --wait"
+export VISUAL="zed --wait"
+
+alias edit='${=VISUAL:-${EDITOR:-nano}}'
+alias ed='edit'
+
+alias dotfiles='curl -sfL https://raw.githubusercontent.com/paulonutor/dotfiles/main/setup.sh | bash'
+
+export NVM_DIR="$HOME/.nvm"
+nvm() { unset -f nvm; [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && . "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"; nvm "$@"; }
+
+export GOPATH=$HOME/go
+export GOROOT="$HOMEBREW_PREFIX/opt/go/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+eval "$(starship init zsh)"

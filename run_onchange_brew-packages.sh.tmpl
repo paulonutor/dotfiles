@@ -1,0 +1,61 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+set -eufo pipefail
+
+brew bundle --file=/dev/stdin <<EOF
+brew "chezmoi"
+brew "gawk"
+brew "gh"
+brew "gnupg"
+brew "go"
+brew "golangci-lint"
+brew "jq"
+brew "nvm"
+brew "ripgrep"
+brew "starship"
+brew "wget"
+brew "yq"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+cask "appcleaner"
+cask "cyberduck"
+cask "fixkey"
+cask "font-fira-code"
+cask "font-fira-code-nerd-font"
+cask "google-chrome"
+cask "home-assistant"
+cask "iterm2"
+cask "keka"
+cask "logi-options+"
+cask "logitune"
+cask "lunar"
+cask "orbstack"
+cask "spotify"
+cask "superwhisper"
+cask "todoist-app"
+cask "vlc"
+cask "zed"
+
+{{- if eq .profile "personal" }}
+brew "ffmpeg"
+cask "chatgpt"
+cask "codex"
+{{- end }}
+
+{{- if eq .profile "work" }}
+brew "awscli"
+brew "k9s"
+brew "kubernetes-cli"
+brew "maven"
+cask "beekeeper-studio"
+cask "claude"
+cask "claude-code"
+cask "keeper-password-manager"
+cask "microsoft-auto-update"
+cask "microsoft-office"
+cask "microsoft-teams"
+cask "postman"
+cask "temurin@21"
+{{- end }}
+EOF
+{{ end -}}

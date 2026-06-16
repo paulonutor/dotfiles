@@ -1,0 +1,3 @@
+data:
+  profile: {{ promptChoice "What type of setup do you want" (list "personal" "work") | quote }}
+  email: {{ promptString "What is your email" | quote }}
