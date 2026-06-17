@@ -19,23 +19,26 @@ The profile is selected during `chezmoi init` via an interactive prompt and stor
 
 ```
 .
-├── dot_agents/              # Agent skills (~/.agents/)
-│   └── skills/
-│       ├── create-readme/
-│       └── grill-me/
-├── dot_claude/              # Claude Code config (~/.claude/)
-│   └── symlink_skills       # symlink → ../.agents/skills
-├── dot_config/              # Application configs (~/.config/)
-│   ├── starship.toml
-│   └── zed/
-│       └── private_settings.json
-├── dot_gitconfig.tmpl       # Git config (~/.gitconfig)
-├── dot_iterm2/              # iTerm2 preferences (~/.iterm2/)
-│   └── com.googlecode.iterm2.plist
-├── dot_zprofile             # Zsh profile (~/.zprofile)
-├── dot_zshrc                # Zsh config (~/.zshrc)
-├── run_once_after_setup-system.sh.tmpl
-├── run_onchange_brew-packages.sh.tmpl
+├── .chezmoiroot             # Points chezmoi at the managed source subtree
+├── home/                    # Root of the chezmoi source state
+│   ├── .chezmoi.yaml.tmpl
+│   ├── dot_agents/          # Agent skills (~/.agents/)
+│   │   └── skills/
+│   │       ├── create-readme/
+│   │       └── grill-me/
+│   ├── dot_claude/          # Claude Code config (~/.claude/)
+│   │   └── symlink_skills   # symlink → ../.agents/skills
+│   ├── dot_config/          # Application configs (~/.config/)
+│   │   ├── starship.toml
+│   │   └── zed/
+│   │       └── private_settings.json
+│   ├── dot_gitconfig.tmpl   # Git config (~/.gitconfig)
+│   ├── dot_iterm2/          # iTerm2 preferences (~/.iterm2/)
+│   │   └── com.googlecode.iterm2.plist
+│   ├── dot_zprofile         # Zsh profile (~/.zprofile)
+│   ├── dot_zshrc            # Zsh config (~/.zshrc)
+│   ├── run_once_after_setup-system.sh.tmpl
+│   └── run_onchange_brew-packages.sh.tmpl
 └── setup.sh
 ```
 
@@ -54,8 +57,9 @@ The profile is selected during `chezmoi init` via an interactive prompt and stor
 
 ### Key files
 
-- `.chezmoi.yaml.tmpl`: Chezmoi configuration
-- `.chezmoiignore`: Files to ignore by chezmoi
+- `.chezmoiroot`: Declares `home/` as the root of the source state
+- `home/.chezmoi.yaml.tmpl`: Chezmoi configuration template
+- `home/.chezmoiignore`: Files to ignore by chezmoi when present
 - `setup.sh`: Installation script
 
 ## Guidelines

@@ -11,7 +11,7 @@
     }
   },
   "agent": {
-    "sidebar_side": "right",
+    "sidebar_side": "left",
     "dock": "right",
     "default_model": {
       "provider": "copilot_chat",
@@ -25,10 +25,13 @@
     "provider": "copilot"
   },
   "agent_servers": {
-    "github-copilot-cli": {
+    "claude-acp": {
       "type": "registry"
     },
-    "claude-acp": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "github-copilot-cli": {
       "type": "registry"
     },
     "github-copilot": {
