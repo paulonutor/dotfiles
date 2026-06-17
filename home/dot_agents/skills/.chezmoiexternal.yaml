@@ -1,0 +1,16 @@
+use-modern-go:
+  type: archive
+  url: https://github.com/JetBrains/go-modern-guidelines/archive/refs/heads/main.tar.gz
+  exact: true
+  stripComponents: 5
+  include:
+    - "*/claude/modern-go-guidelines/skills/use-modern-go/**/*"
+  refreshPeriod: 168h
+caveman:
+  type: archive
+  url: https://github.com/JuliusBrussee/caveman/archive/refs/heads/main.tar.gz
+  exact: true
+  stripComponents: 3
+  include:
+    - "caveman-main/skills/caveman/**"
+  refreshPeriod: 168h
