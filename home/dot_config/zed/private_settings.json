@@ -1,59 +1,59 @@
 {
   "search": {
-    "center_on_match": true
+    "center_on_match": true,
   },
   "git": {
     "path_style": "file_path_first",
     "hunk_style": "staged_hollow",
     "inline_blame": {
       "show_commit_summary": true,
-      "delay_ms": 500
-    }
+      "delay_ms": 500,
+    },
   },
   "agent": {
     "sidebar_side": "left",
     "dock": "right",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "claude-sonnet-4",
     },
     "favorite_models": [],
-    "model_parameters": []
+    "model_parameters": [],
   },
   "edit_predictions": {
     "mode": "subtle",
-    "provider": "copilot"
+    "provider": "copilot",
   },
   "agent_servers": {
     "claude-acp": {
-      "type": "registry"
+      "type": "registry",
     },
     "codex-acp": {
-      "type": "registry"
+      "type": "registry",
     },
     "github-copilot-cli": {
-      "type": "registry"
+      "type": "registry",
     },
     "github-copilot": {
-      "type": "registry"
-    }
+      "type": "registry",
+    },
   },
   "languages": {
     "Go": {
-      "language_servers": ["gopls", "golangci-lint"]
-    }
+      "language_servers": ["gopls", "golangci-lint"],
+    },
   },
   "lsp": {
     "jdtls": {
       "settings": {
         "java_home": "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home",
-        "lombok_support": true
-      }
+        "lombok_support": true,
+      },
     },
     "gopls": {
       "initialization_options": {
-        "gofumpt": true
-      }
+        "gofumpt": true,
+      },
     },
     "golangci-lint": {
       "initialization_options": {
@@ -63,64 +63,64 @@
           "--output.json.path",
           "stdout",
           "--show-stats=false",
-          "--output.text.path="
-        ]
-      }
-    }
+          "--output.text.path=",
+        ],
+      },
+    },
   },
   "collaboration_panel": {
     "dock": "left",
-    "button": false
+    "button": false,
   },
   "git_panel": {
     "tree_view": true,
-    "dock": "right"
+    "dock": "right",
   },
   "outline_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "project_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "title_bar": {
     "show_sign_in": false,
-    "show_onboarding_banner": false
+    "show_onboarding_banner": false,
   },
   "tab_bar": {
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "tabs": {
-    "close_position": "left"
+    "close_position": "left",
   },
   "session": {
-    "trust_all_worktrees": true
+    "trust_all_worktrees": true,
   },
   "terminal": {
     "toolbar": {
-      "breadcrumbs": false
+      "breadcrumbs": false,
     },
     "font_family": "FiraCode Nerd Font",
-    "font_size": 12.0,
+    "font_size": 13.0,
     "cursor_shape": "bar",
-    "blinking": "on"
+    "blinking": "on",
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "base_keymap": "VSCode",
   "preview_tabs": {
     "enabled": false,
-    "enable_keep_preview_on_code_navigation": true
+    "enable_keep_preview_on_code_navigation": true,
   },
   "minimap": {
-    "show": "never"
+    "show": "never",
   },
   "autosave": "on_focus_change",
   "buffer_font_family": "Fira Code",
   "auto_indent_on_paste": true,
   "indent_guides": {
-    "enabled": false
+    "enabled": false,
   },
   "icon_theme": "Material Icon Theme",
   "ui_font_size": 16,
@@ -128,6 +128,6 @@
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",
-    "dark": "Ayu Dark"
-  }
+    "dark": "Ayu Dark",
+  },
 }
