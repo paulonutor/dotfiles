@@ -1,0 +1,22 @@
+# Font Settings
+font-family = "FiraCode Nerd Font"
+font-size = 13
+font-thicken = true
+
+# Window & Titlebar
+macos-titlebar-style = tabs
+window-width = 120
+window-height = 30
+window-padding-x = 12
+window-padding-y = 10
+window-padding-balance = true
+
+# Cursor & Behavior
+mouse-hide-while-typing = true
+
+# Theme
+theme = Ayu
+
+# Keybindings
+keybind = super+d=unbind
+keybind = super+shift+d=unbind
