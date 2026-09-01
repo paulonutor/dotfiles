@@ -30,6 +30,9 @@ export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+# Add local binaries to path
+export PATH="$HOME/.local/bin:$PATH"
+
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 eval "$(starship init zsh)"
