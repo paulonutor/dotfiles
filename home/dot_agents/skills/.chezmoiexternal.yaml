@@ -22,3 +22,13 @@ unslop:
   include:
     - "*/pstack/skills/unslop/**"
   refreshPeriod: 168h
+{{ if eq .profile "personal" }}
+home-assistant-best-practices:
+  type: archive
+  url: https://github.com/homeassistant-ai/skills/archive/refs/heads/main.zip
+  exact: true
+  stripComponents: 3
+  include:
+    - "*/skills/home-assistant-best-practices/**"
+  refreshPeriod: 168h
+{{ end }}
