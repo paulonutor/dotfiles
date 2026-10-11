@@ -1,4 +1,3 @@
-{{- if eq .profile "personal" }}
 # Working agreements
 
 These are personal defaults for coding agents. Follow the user's current request
@@ -85,9 +84,13 @@ these defaults, including authorization to integrate or push completed work.
 
 ## Communication
 
-- Be concise and concrete. Explain what changed, why, how it was checked, and
-  any material limitation. Explain structural tradeoffs when they matter.
+- Give the shortest complete answer. Default to a short paragraph or a few
+  brief bullets; expand only when requested or needed for understanding.
+- Use plain language and complete sentences. Avoid compressed shorthand,
+  introductions, repetition, routine narration, and unnecessary closing offers.
+- Lead with the answer or outcome. For completed work, include only the changes,
+  verification, and material limitations needed to assess the result. Explain
+  reasons or tradeoffs only when they affect a decision.
 - When a decision is necessary, ask one focused question with a recommendation.
   Continue independent authorized work while waiting.
 - Separate proposed work from implemented and verified behavior.
-{{ end -}}

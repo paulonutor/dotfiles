@@ -1,0 +1,3 @@
+{{- if ne .profile "personal" }}
+.codex/AGENTS.md
+{{- end }}
