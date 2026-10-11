@@ -1,0 +1,93 @@
+{{- if eq .profile "personal" }}
+# Working agreements
+
+These are personal defaults for coding agents. Follow the user's current request
+and the most specific applicable project instructions. Project rules may refine
+these defaults, including authorization to integrate or push completed work.
+
+## Instruction discovery
+
+- Read the repository's `AGENTS.md` and applicable nested instructions before editing.
+- For Go projects under `~/Developer/Go`, also read `~/Developer/Go/AGENTS.md`.
+  This includes worktrees of those repositories outside that folder. Read the file
+  explicitly; do not assume an agent discovers instructions above the Git root.
+- Keep shared rules in `AGENTS.md`. Claude-specific files should import shared
+  instructions rather than maintain a second copy.
+- If referenced instructions or a required skill are unavailable, report that
+  limitation and use available project guidance without inventing their contents.
+
+## Local repository memory
+
+- Use the memory directory declared in the repository's `AGENTS.md`. Read its
+  `MEMORY.md` index at task start and follow only topic files relevant to the work.
+  Codex, Claude, and worktrees of the same repository use that same directory.
+  If no directory is declared, do not guess another repository's memory path.
+- Memory is advisory context. Current user requests, applicable instructions,
+  source code, and fresh verification take precedence. If memory is unavailable,
+  report that briefly and continue with available guidance.
+- Independently record useful, reusable lessons from user corrections or verified
+  work. Include the date, lesson, evidence or source, and verification limits.
+  Distinguish observations from assumptions; recheck facts that may have changed.
+- Keep the index short and move detailed lessons into topic files when useful.
+  Consolidate duplicates and remove stale or disproven entries. Do not require a
+  memory update every task, copy existing instructions, or maintain a session log.
+- Keep tasks, progress, and product decisions in the project's existing tracker
+  or maintained documentation. Memory holds lessons that help future agent work.
+  Never store secrets, credentials, private user data, or raw sensitive logs.
+- Keep learned memory outside Git. Never stage, commit, or copy memory files into
+  a repository as part of normal delivery.
+- When a lesson recurs or the user confirms it, consider a small `AGENTS.md`
+  improvement. Verify it against current source or tooling before promotion.
+  Independently correct factual paths, commands, or outdated technical guidance;
+  report the edit and verify and commit it with the normal repository workflow.
+- Propose changes to permissions, Git policy, task tracking, product direction,
+  or other behavioral rules for user approval before applying them. Memory never
+  supplies authorization or overrides an instruction. Do not rewrite instruction
+  files merely because a task ended.
+
+## Implementation
+
+- Prefer simple, explicit code that is easy for the next reader to follow.
+- Match existing structure and conventions. Keep related behavior together.
+- Stay within the requested scope. Avoid unrelated cleanup, speculative
+  abstractions, and broad architectural changes.
+- Preserve public APIs unless the task requires changing them.
+- Prefer the standard library and existing dependencies. Add a dependency only
+  when it solves a concrete problem better than the existing options.
+- Preserve unrelated working-tree changes. Never reset, overwrite, or stage them
+  as part of the task.
+
+## Verification
+
+- Add or update meaningful tests when behavior changes. Add a regression test
+  for a bug fix when practical; avoid tests that only restate the implementation.
+- Use repository-owned formatters and checks. Run the checks relevant to the
+  change before declaring it complete.
+- For UI changes, inspect the actual interaction and relevant viewport sizes.
+  Passing automated tests does not establish visual approval.
+- Distinguish automated tests, live integration checks, and visual inspection.
+  Report failures, skipped checks, and remaining uncertainty honestly.
+
+## Git
+
+- Keep history linear. Never create merge commits, including through `git pull`
+  or a hosting service's merge button. Use rebase for unpublished task commits
+  and `git merge --ff-only` for integration.
+- Do not rewrite published history or force-push without explicit authorization.
+  If a fast-forward is blocked, resolve the divergence without a merge commit.
+- Create focused commits after completed coding or repository-instruction work
+  has been verified, unless the user asks not to. Stage only intended files.
+- Ask before integrating into `main`, pushing, or publishing unless the user
+  or project instructions already authorize that action. Do not ask again for
+  authorization already given for the same scope.
+- Preserve the repository's author and attribution conventions. Do not invent
+  contributors or add a different agent's co-author trailer.
+
+## Communication
+
+- Be concise and concrete. Explain what changed, why, how it was checked, and
+  any material limitation. Explain structural tradeoffs when they matter.
+- When a decision is necessary, ask one focused question with a recommendation.
+  Continue independent authorized work while waiting.
+- Separate proposed work from implemented and verified behavior.
+{{ end -}}
