@@ -2,7 +2,7 @@
 #!/bin/bash
 set -eufo pipefail
 
-brew bundle --file=/dev/stdin <<EOF
+brew bundle --no-upgrade --file=/dev/stdin <<EOF
 brew "chezmoi"
 brew "eza"
 brew "gawk"
@@ -65,8 +65,7 @@ cask "keeper-password-manager"
 cask "microsoft-auto-update"
 cask "microsoft-office"
 cask "microsoft-teams"
-cask "supacode"
-cask "temurin@21"
+cask "zulu@8"
 {{- end }}
 EOF
 {{ end -}}
