@@ -11,7 +11,9 @@
     },
   },
   "agent": {
-    "sidebar_side": "left",
+    "threads_sidebar": {
+      "position": "left"
+    },
     "dock": "right",
     "default_model": {
       "provider": "copilot_chat",
