@@ -1,4 +1,5 @@
 {
+  "colorize_brackets": true,
   "search": {
     "center_on_match": true,
   },
@@ -48,8 +49,7 @@
   "lsp": {
     "jdtls": {
       "settings": {
-        "java_home": "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home",
-        "lombok_support": true,
+        "jdk_auto_download": true,
       },
     },
     "gopls": {
